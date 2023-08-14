@@ -2,6 +2,9 @@ import express from "express";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -42,7 +45,7 @@ app.post('/send', (req, res) => {
     const { email, message } = req.body;
 
     const mailOptions = {
-        from: 'bunatovakamila@seznam.cz',
+        from: process.env.EMAIL_USER,
         to: 'taborstrelka@gmail.com',
         subject: 'Nová zpráva z webového formuláře',
         text: `E-mail od: ${email}\n\n${message}`
