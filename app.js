@@ -1,8 +1,8 @@
 import express from "express";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
+import { transporter } from "./mailTransporter.js";
 
 dotenv.config();
 
@@ -11,17 +11,6 @@ const port = process.env.PORT || 3000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-//Configure connection to mailclient
-const transporter = nodemailer.createTransport({
-    host: 'smtp.seznam.cz',
-    port: 465,
-    secure: true,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD
-    }
-});
 
 //Set EJS as template module, paths to templates
 app.set('view engine', 'ejs');
