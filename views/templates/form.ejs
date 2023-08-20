@@ -2,10 +2,15 @@
     <h1 class="h2">Kontaktujte nás</h1>
     <p class="paragraph">Mimo dole přiložené kontaktní možnosti nás můžete ihned kontaktovat přes kontaktní formulář. Stačí zadat váš email ať víme komu odpovědět, pro všechny případy můžete přiložit i telefonní číslo, a napsat svoji zprávu.</p>
     <form action="/send" method="POST">
-        <label for="email">E-mail:</label>
-        <input type="email" name="email" id="email" required><br>
-        <label for="message">Zpráva:</label><br>
-        <textarea name="message" id="message" cols="30" rows="4" required></textarea><br>
-        <button type="submit">Odeslat</button>
+        <label class="textLabel" for="email">E-mail:</label>
+        <input class="textInput" type="email" name="email" id="email" required>
+        <br>
+        <label class="textLabel" for="phone">Telefonní číslo:</label>
+        <input class="textInput" type="tel" name="phone" id="phone" value="+420">
+        <br>
+        <label class="textLabel" for="message">Zpráva:</label>
+        <textarea class="textArea" name="message" id="message" cols="30" rows="4" required></textarea>
+        <br>
+        <button class="formButton" type="submit" id="formSubmitBtn">Odeslat</button>
     </form>
 </section>

@@ -31,22 +31,21 @@ app.get('/ke-stazeni', (req, res) => {
 
 //Odeslání contact formu
 app.post('/send', (req, res) => {
-    const { email, message } = req.body;
+    const { email, message, phone } = req.body;
 
     const mailOptions = {
         from: process.env.EMAIL_USER,
         to: 'taborstrelka@gmail.com',
         subject: 'Nová zpráva z webového formuláře',
-        text: `E-mail od: ${email}\n\n${message}`
+        text: `E-mail od: ${email}\nTelefonní číslo odesílatele: ${phone}\n\n${message}`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error(error);
-            res.send('chyba při odesílání mailu');
         } else {
             console.log('E-mail byl odeslán: ' + info.response);
-            res.send('E-mail úspěšně odeslán');
+            res.redirect('/');
         }
     });
 });
