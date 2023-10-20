@@ -5,8 +5,10 @@ const submitBtn = document.getElementById('formSubmitBtn');
 mailInput.addEventListener('input', toggleSubmitBtn);
 messageInput.addEventListener('input', toggleSubmitBtn);
 
+submitBtn.setAttribute('disabled', true);
+
 function toggleSubmitBtn() {
-    if (mailInput.ariaValueMax.trim() !== '' && messageInput.ariaValueMax.trim() !== '') {
+    if (mailInput.value.trim() !== '' && messageInput.value.trim() !== '') {
         submitBtn.removeAttribute('disabled');
     } else {
         submitBtn.setAttribute('disabled', true);
