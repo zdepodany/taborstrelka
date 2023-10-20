@@ -1,7 +1,7 @@
 <section class="formSection">
     <h1 class="h2">Kontaktujte nás</h1>
     <p class="paragraph">Mimo dole přiložené kontaktní možnosti nás můžete ihned kontaktovat přes kontaktní formulář. Stačí zadat váš email ať víme komu odpovědět, pro všechny případy můžete přiložit i telefonní číslo, a napsat svoji zprávu.</p>
-    <form action="/send" method="POST">
+    <form action="/send" method="POST" id="demo-form">
         <label class="textLabel" for="email">E-mail:</label>
         <input class="textInput" type="email" name="email" id="email" required>
         <br>
@@ -11,6 +11,6 @@
         <label class="textLabel" for="message">Zpráva:</label>
         <textarea class="textArea" name="message" id="message" cols="30" rows="4" required></textarea>
         <br>
-        <button class="formButton g-recaptcha" data-sitekey="6LenhLcoAAAAADqAWOU8USJts4H4QTj1tltTFaei" data-callback='onSubmit' data-action='submit' type="submit" id="formSubmitBtn">Odeslat</button>
+        <button type="submit" class="formButton g-recaptcha" data-sitekey="6LenhLcoAAAAADqAWOU8USJts4H4QTj1tltTFaei" data-callback='onSubmit' data-action='submit'>Odeslat</button>
     </form>
 </section>
