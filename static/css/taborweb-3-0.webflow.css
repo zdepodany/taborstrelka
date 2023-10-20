@@ -626,17 +626,18 @@
 
 .dropdown-list {
   background-color: #252525;
+  border: 1px solid #313131;
   transition: opacity .2s;
 }
 
 .dropdown-list.w--open {
-  border-radius: 8px;
+  border-radius: 0 0 4px 4px;
 }
 
 .dropdown-link {
   color: #fff;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 4px;
   font-family: Inter, sans-serif;
   transition: background-color .25s;
 }
@@ -644,7 +645,6 @@
 .dropdown-link:hover {
   color: #ceff9d;
   background-color: #0c0c0c;
-  font-weight: 500;
 }
 
 .doc-link {
