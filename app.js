@@ -10,13 +10,13 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 //Force HTTPS
-app.use((req, res, next) => {
-    if (req.headers['x-forwarded-proto'] !== 'https') {
-        res.redirect(`https://${req.headers.host}${req.url}`);
-    } else {
-        next();
-    }
-});
+//app.use((req, res, next) => {
+//    if (req.headers['x-forwarded-proto'] !== 'https') {
+//        res.redirect(`https://${req.headers.host}${req.url}`);
+//    } else {
+//        next();
+//    }
+//});
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -39,6 +39,7 @@ app.get('/ke-stazeni', (req, res) => {
 });
 
 //Odeslání contact formu
+/*
 app.post('/send', (req, res) => {
     const { email, message, phone } = req.body;
 
@@ -58,6 +59,7 @@ app.post('/send', (req, res) => {
         }
     });
 });
+*/
 
 app.listen(port, () => {
     console.log(`Server is running on port: http://localhost:${port}`);
